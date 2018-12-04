@@ -1,32 +1,30 @@
 // temporary, until https://github.com/Microsoft/TypeScript/issues/10178 is implemented
-import * as angular from 'angular';
+import * as angular from "angular";
 
 /**
  * Import Module Components
  */
-import { AddContactForm } from './components/add-contact-form/add-contact-form.component';
-import { ContactList } from './components/contact-list/contact-list.component';
+import { AddContactForm } from "./components/add-contact-form/add-contact-form.component";
+import { ContactList } from "./components/contact-list/contact-list.component";
 
 /**
  * Import Module Containers
  */
-import { ContactsContainer } from './containers/contacts/contacts.container';
-import { AddContactContainer } from './containers/add-contact/add-contact.container';
+import { ContactsContainer } from "./containers/contacts/contacts.container";
+import { AddContactContainer } from "./containers/add-contact/add-contact.container";
 
 /**
  * Import Module Services
  */
-import { ContactsService } from './services/contacts.service';
+import { ContactsService } from "./services/contacts.service";
 
 /**
  * Import Module Routing
  */
-import { routing } from './contacts.routes';
+import { routing } from "./contacts.routes";
 
-export const moduleName =
-  angular.module('application.contacts', [
-      'ui.router'
-  ])
+export const moduleName = angular
+  .module("application.contacts", ["ui.router"])
 
   /**
    * Register Module Components
@@ -48,5 +46,4 @@ export const moduleName =
   /**
    * Register Module Configuration
    */
-  .config(routing)
-  .name;
+  .config(routing).name;

@@ -1,22 +1,21 @@
-import { ContactsService } from './../../services/contacts.service';
+import { ContactsService } from "./../../services/contacts.service";
 
 class AddContactController {
-
   constructor(
-      private contactsService: ContactsService,
-      private $state: angular.ui.IStateService
+    private contactsService: ContactsService,
+    private $state: angular.ui.IStateService
   ) {
-    'ngInject';
+    "ngInject";
   }
 
-  add(contact: { lastName: string, firstName: string })  {
+  add(contact: { lastName: string; firstName: string }) {
     this.contactsService.add(contact);
-    this.$state.go('contacts');
+    this.$state.go("contacts");
   }
 }
 
 export class AddContactContainer implements angular.IComponentOptions {
-  static selector = 'addContact';
+  static selector = "addContact";
   static controller = AddContactController;
   static template = `
   <div class="row">

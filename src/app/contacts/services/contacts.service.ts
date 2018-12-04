@@ -1,20 +1,18 @@
 export class ContactsService {
-  static selector = 'contactsService';
-  contacts: { id: number, lastName: string, firstName: string }[] = [
-    { id: 1, firstName: 'John', lastName: 'Doe' }
+  static selector = "contactsService";
+  contacts: { id: number; lastName: string; firstName: string }[] = [
+    { id: 1, firstName: "John", lastName: "Doe" }
   ];
 
-  constructor(
-      private $q: angular.IQService
-  ) {
-    'ngInject';
+  constructor(private $q: angular.IQService) {
+    "ngInject";
   }
 
   getAll() {
     return this.$q.resolve(this.contacts);
   }
 
-  add(contact: { lastName: string, firstName: string }) {
+  add(contact: { lastName: string; firstName: string }) {
     const highestId = this.contacts
       .map(c => c.id)
       .reduce((a, b) => Math.max(a, b), 1);

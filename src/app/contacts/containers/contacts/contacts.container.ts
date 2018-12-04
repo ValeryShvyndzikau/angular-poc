@@ -1,18 +1,16 @@
-import { ContactsService } from './../../services/contacts.service';
+import { ContactsService } from "./../../services/contacts.service";
 
 /**
  * Import the Component styles
  */
-import './contacts.container.scss';
+import "./contacts.container.scss";
 
 class ContactsController {
-  contacts: { id: number, firstName: string, lastName: string }[];
+  contacts: { id: number; firstName: string; lastName: string }[];
 
-  constructor(
-      private contactsService: ContactsService
-  ) {
-      'ngInject';
-    }
+  constructor(private contactsService: ContactsService) {
+    "ngInject";
+  }
 
   $onInit() {
     this.fetchData();
@@ -24,15 +22,14 @@ class ContactsController {
   }
 
   private fetchData() {
-    this.contactsService.getAll()
-      .then(contacts => {
-        this.contacts = contacts;
-      });
+    this.contactsService.getAll().then(contacts => {
+      this.contacts = contacts;
+    });
   }
 }
 
 export class ContactsContainer implements angular.IComponentOptions {
-  static selector = 'contacts';
+  static selector = "contacts";
   static controller = ContactsController;
   static template = `
   <div class="row">
