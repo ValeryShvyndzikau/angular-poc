@@ -3,8 +3,8 @@ import { ContactsContainer } from "./containers/contacts/contacts.container";
 
 export const routing = ($stateProvider: angular.ui.IStateProvider) => {
   "ngInject";
-  $stateProvider
 
+  $stateProvider
     .state("add-contact", {
       parent: "app",
       url: "/contact/add",
