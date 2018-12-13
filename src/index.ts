@@ -1,27 +1,25 @@
 /**
  * Import the polyfills and vendor files
+ * @todo: Consider to solve via webpack flow
  */
 import "./polyfills";
 import "./vendor";
 
 /**
- * Import the global styles
+ * @todo: Apply CSS modules system
  */
 import "./index.scss";
 
-/**
- * Temporary Import angular
- * see: https://github.com/Microsoft/TypeScript/issues/10178
- */
 import * as angular from "angular";
 
-/**
- *  Import module to be bootstrapped
- */
-import { moduleName as appModule } from "./app/app.module";
+import { delay } from "./common/utils";
+import { moduleName as appModule } from "./app";
 
-/**
- * Bootstrap the application using the imported moduleName
- */
-const bootstrapModuleName = angular.module("application.bootstrap", [appModule])
-  .name;
+const runApplication = async () => {
+  // do some async stuff
+  await delay(500);
+  // then start the app
+  angular.bootstrap(document.getElementById("app"), [appModule]);
+};
+
+runApplication();

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="application.bootstrap">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
 
-   <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
 
-
-<body>
-    <root>Loading</root>
-</body>
+  <body>
+    <div id="app"><app-component>Loading...</app-component></div>
+  </body>
 </html>

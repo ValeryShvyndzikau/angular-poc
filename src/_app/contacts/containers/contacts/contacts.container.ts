@@ -14,19 +14,9 @@ class ContactsController {
 
   $onInit() {
     this.fetchData();
-
-    const a: number = "abcs";
-    const arr = [1, 2, 3, 4];
-
-    // bad
-    const first = arr[0];
-    const second = arr[1];
-
-    console.log("abc");
   }
 
   remove(id: number) {
-    id = "abc";
     this.contactsService.remove(id);
     this.fetchData();
   }
