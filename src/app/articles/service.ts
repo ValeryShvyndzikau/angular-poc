@@ -1,4 +1,5 @@
 import { Article } from "./types";
+import { AppConfig } from "../types";
 
 /**
  * @todo: Consider to extend with Event.emitter
@@ -8,7 +9,7 @@ export class ArticlesService {
   static selector: string = "articlesService";
   articles: Article[];
 
-  constructor() {
+  constructor(appConfig: AppConfig) {
     "ngAnnotate";
 
     this.articles = [
@@ -20,6 +21,6 @@ export class ArticlesService {
       }
     ];
 
-    console.log("service instantiated");
+    console.log(appConfig, "service instantiated");
   }
 }
