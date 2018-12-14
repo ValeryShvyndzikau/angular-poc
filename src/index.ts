@@ -16,9 +16,8 @@ import { delay } from "./common/utils";
 import { moduleName as appModule } from "./app";
 
 const runApplication = async () => {
-  // do some async stuff
+  // do some async stuff, then start the app
   await delay(500);
-  // then start the app
   angular.bootstrap(document.getElementById("app"), [appModule]);
 };
 

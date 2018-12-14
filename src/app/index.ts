@@ -21,4 +21,4 @@ export const moduleName = angular.module("app", [
       baseURL: 'somehost/api'
     }
   })
-  .name
+  .name;

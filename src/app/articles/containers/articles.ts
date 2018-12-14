@@ -1,18 +1,34 @@
-import { IComponentOptions } from "angular";
+import { IComponentOptions, IScope } from "angular";
+
+import { Article } from "../types";
 import { ArticlesService } from "../service";
 
 class ArticlesController {
-  constructor(articlesService: ArticlesService) {
+  articles: Article[];
+  constructor(public articlesService: ArticlesService, public $scope: IScope) {
     "ngAnnotate";
   }
 
   $onInit() {
-    console.log("ArticlesController init");
+    this.fetch();
+  }
+
+  fetch() {
+    this.articlesService.fetchArticles().then(data => {
+      this.articles = data;
+      //this.$scope.$applyAsync();
+    });
   }
 }
 
 export class ArticlesContainer {
   static selector = "articlesContainer";
   controller = ArticlesController;
-  template = `<div>ARTICLES COMPONENT</div>`;
+  template = `
+    <ul>
+      <li ng-repeat="article in $ctrl.articles">
+       {{article.title}}
+       </li>
+    </ul>
+  `;
 }

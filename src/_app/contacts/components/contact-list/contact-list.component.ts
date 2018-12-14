@@ -3,8 +3,6 @@
  */
 import "./contact-list.component.scss";
 
-let a = 0;
-
 class ContactListController {
   contacts: { name: string }[];
   contactRemoved: ($event: { $event: { id: number } }) => void;
